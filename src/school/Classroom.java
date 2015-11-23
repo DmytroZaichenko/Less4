@@ -11,9 +11,9 @@ public class Classroom {
     public Classroom() {
 
         students = new ArrayList<>();
-        enter(new Student("Dmytro Tkachenko","Tkachenko"));
-        enter(new Student("Pavlo Gusko","Gusko"));
-        enter(new Student("Olena Tixo","Tixo"));
+        enter(new Student("Dmytro","Tkachenko"));
+        enter(new Student("Pavlo","Gusko"));
+        enter(new Student("Olena","Tixo"));
 
     }
 
@@ -28,30 +28,34 @@ public class Classroom {
 
     }
 
-    public void getStudentCount(){
-        System.out.println("Count of students: "+students.size());
-    }
+//    public void getStudentCount(){
+//        System.out.println("Count of students: "+students.size());
+//    }
+//
+//    public boolean isPresent(String name, String secondName){
+//
+//        boolean result = false;
+//        Student student;
+//        for (int i = 0; i < students.size() - 1 ; i++) {
+//            student = students.get(i);
+//            if (student.getName().toUpperCase().equals(name.toUpperCase()) &&
+//                student.getSecondName().toUpperCase().equals(secondName.toUpperCase())){
+//                result = true;
+//            }
+//        }
+//
+//        return result;
+//    }
 
     public boolean isPresent(String name, String secondName){
-
-        boolean result = false;
-        Student student;
-        for (int i = 0; i < students.size() - 1 ; i++) {
-            student = students.get(i);
-            if (student.getName().toUpperCase().equals(name.toUpperCase()) &&
-                student.getSecondName().toUpperCase().equals(secondName.toUpperCase())){
-                result = true;
-            }
-        }
-
-        return result;
+        return students.contains(name);
     }
 
     public void printStudentInfo(){
 
         for (int i = 0; i < students.size() - 1; i++) {
             Student student = students.get(i);
-            System.out.println(student.getName());
+            System.out.println(student.toString());
         }
     }
 
@@ -63,6 +67,10 @@ public class Classroom {
             return "no found student with idx "+idx+ " at the list";
         }
 
+    }
+
+    public List<Student> getS(){
+        return new ArrayList<>(students);
     }
 
 

@@ -4,6 +4,9 @@ public class Student {
     private String name;
     private String secondName;
 
+    public Student() {
+    }
+
     public Student(String name, String secondName) {
         this.name = name;
         this.secondName = secondName;
@@ -23,5 +26,16 @@ public class Student {
 
     public void setSecondName(String secondName) {
         this.secondName = secondName;
+    }
+
+    @Override
+    public String toString() {
+        return "student: " + getName()+" "+getSecondName();
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+        Student student = (Student) obj;
+        if (student.getName() == )
     }
 }
