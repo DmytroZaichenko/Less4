@@ -143,7 +143,12 @@ public class SimpleLinkedList implements Iterable<Object>{
             throw new IllegalStateException("List has no more elements.");
         }
 
+        @Override
+        public void remove() {
+            if (node != null && hasNext()){
 
+            }
+        }
     }
 
 }
