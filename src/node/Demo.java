@@ -70,10 +70,18 @@ public class Demo {
         sll.addFirst("2. Second");
         sll.addFirst("3. the third");
 
+//        for (Iterator<Object> it = sll.iterator(); it.hasNext();){
+//            Object o = it.next();
+//            System.out.println(o);
+//        }
+
         for (Iterator<Object> it = sll.iterator(); it.hasNext();){
-            Object o = it.next();
-            System.out.println(o);
+            it.next();
+            it.remove();
+            break;
         }
+
+        sll.printList();
 
 
 

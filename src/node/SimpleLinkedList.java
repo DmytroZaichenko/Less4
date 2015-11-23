@@ -119,35 +119,48 @@ public class SimpleLinkedList implements Iterable<Object>{
 
     private class SLLIterator implements Iterator<Object>{
 
-        private Node node;
+        private Node curNode;
+        private Node prevNode;
 
         public SLLIterator() {
         }
 
         @Override
         public boolean hasNext() {
-            return (node == null && root != null) || (node != null && node.ref != null);
+            return (curNode == null && root != null) || (curNode != null && curNode.ref != null);
         }
 
         @Override
         public Object next() {
-            if (node == null && root != null){
-                node = root;
-                return node.getObj();
+            if (curNode == null && root != null){
+                curNode = root;
+                return curNode.getObj();
             }
 
             if (hasNext()){
-                node = node.ref;
-                return node.obj;
+                prevNode = curNode;
+                curNode = curNode.ref;
+                return curNode.obj;
             }
             throw new IllegalStateException("List has no more elements.");
         }
 
         @Override
         public void remove() {
-            if (node != null && hasNext()){
-
+            if(!hasNext() && prevNode == null){
+                curNode = null;
+                root = null;
+            }else if(!hasNext() && prevNode != null){
+                prevNode = null;
+                curNode = null;
+            }else if(hasNext() && prevNode == null){
+                root = curNode.ref;
+                curNode = root;
+            }else {
+                prevNode.ref = curNode.ref;
+                curNode = curNode.ref;
             }
+            size --;
         }
     }
 
