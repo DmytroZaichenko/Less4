@@ -1,63 +1,116 @@
 package node;
 
-import java.util.LinkedList;
-
 public class SimpleLinkedList {
 
     private Node root;
     private int size;
-    private LinkedList<Object> lList;
 
     public SimpleLinkedList() {
         size = 0;
-        lList = new LinkedList<>();
     }
 
-    private void addFirst(Object obj) {
+    public void addFirst(Object obj) {
 
         Node node = new Node();
-        node.setNode(root);
-        node.setObj(node);
-        lList.add(0,node);
+        node.obj = obj;
 
+        if (root != null){
+            node.ref = root;
+        }
+        root = node;
+        size ++;
+    }
+
+    public void addLast(Object obj) {
+
+        Node n = new Node();
+        n.obj = obj;
+
+        if (root == null){
+            root = n;
+        }else{
+            Node last  = root;
+            Node cp = root;
+            while (cp.ref != null){
+                last = cp;
+                cp = cp.ref;
+            }
+            last.ref = n;
+        }
+        size ++;
 
     }
 
-    private void addLast(Object obj) {
+    public void printList(){
+        if (size == 0){
+            System.out.println("list is empty");
+        }
+
+        System.out.print("{");
+        Node cp = root;
+        while(cp.ref != null){
+            System.out.print(cp.obj + ", ");
+            cp = cp.ref;
+        }
+        System.out.print(cp.obj);
+        System.out.println(" }");
+    }
+
+    public void addAfter(Object obj, Object prev) {
+
+        Node prevP = null;
+        Node cp = root;
+
+        do{
+            if (cp.obj == prev){
+                prevP = cp;
+                break;
+            }
+            cp = cp.ref;
+        }while (cp != null && cp.ref != null );
+
+        if (prevP == null){
+            throw new IllegalStateException("List does not contain prev object.");
+        }
+
+        Node n = new Node();
+        n.obj = obj;
+
+        if (prevP.ref != null){
+            n.ref = prevP.ref;
+        }
+        prevP.ref = n;
+        size ++;
 
     }
 
-    private void addAfter(Object obj, Object prev) {
-
-    }
-
-    private int getSize() {
+    public int getSize() {
         return size;
     }
 
     private class Node {
 
         private Object obj;
-        private Node node;
+        private Node ref;
 
-        public Node() {
-        }
-
-        public Object getObj() {
-            return obj;
-        }
-
-        public void setObj(Object obj) {
-            this.obj = obj;
-        }
-
-        public Node getNode() {
-            return node;
-        }
-
-        public void setNode(Node node) {
-            this.node = node;
-        }
+//        public Node() {
+//        }
+//
+//        public Object getObj() {
+//            return obj;
+//        }
+//
+//        public void setObj(Object obj) {
+//            this.obj = obj;
+//        }
+//
+//        public Node getRef() {
+//            return ref;
+//        }
+//
+//        public void setRef(Node ref) {
+//            this.ref = ref;
+//        }
     }
 
 }
