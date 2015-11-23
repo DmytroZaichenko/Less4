@@ -6,22 +6,35 @@ public class SimpleLinkedList {
     private  int size;
 
     public SimpleLinkedList() {
+        size = 0;
     }
 
-    private void addFirst(Object o){
-
-    }
-
-    private void addLast(Object o){
+    private void addFirst(Object obj){
 
     }
 
-    private void addAfter(Object o){
+    private void addLast(Object obj){
+
+    }
+
+    private void addAfter(Object obj, Object prev){
 
     }
 
     private int getSize(){
-        return 0;
+        return size;
+    }
+
+
+
+}
+
+class Node {
+
+    private Object o;
+    private Node node;
+
+    public Node() {
     }
 
 }

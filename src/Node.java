@@ -1,5 +1,3 @@
-package node;
-
 public class Node {
 
     private Object o;
