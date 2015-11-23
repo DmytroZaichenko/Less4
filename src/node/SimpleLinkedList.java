@@ -35,7 +35,7 @@ public class SimpleLinkedList {
                 last = cp;
                 cp = cp.ref;
             }
-            last.ref = n;
+            last.ref.ref = n;
         }
         size ++;
 
@@ -93,24 +93,6 @@ public class SimpleLinkedList {
         private Object obj;
         private Node ref;
 
-//        public Node() {
-//        }
-//
-//        public Object getObj() {
-//            return obj;
-//        }
-//
-//        public void setObj(Object obj) {
-//            this.obj = obj;
-//        }
-//
-//        public Node getRef() {
-//            return ref;
-//        }
-//
-//        public void setRef(Node ref) {
-//            this.ref = ref;
-//        }
     }
 
 }
