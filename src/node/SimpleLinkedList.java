@@ -1,5 +1,7 @@
 package node;
 
+import java.util.Iterator;
+
 public class SimpleLinkedList {
 
     private Node root;
@@ -12,10 +14,10 @@ public class SimpleLinkedList {
     public void addFirst(Object obj) {
 
         Node node = new Node();
-        node.obj = obj;
+        node.setObj(obj);
 
         if (root != null){
-            node.ref = root;
+            node.setRef(root);
         }
         root = node;
         size ++;
@@ -24,18 +26,18 @@ public class SimpleLinkedList {
     public void addLast(Object obj) {
 
         Node n = new Node();
-        n.obj = obj;
+        n.setObj(obj);
 
         if (root == null){
             root = n;
         }else{
             Node last  = root;
             Node cp = root;
-            while (cp.ref != null){
+            while (cp.getRef() != null){
+                cp = cp.getRef();
                 last = cp;
-                cp = cp.ref;
             }
-            last.ref.ref = n;
+            last.setRef(n);
         }
         size ++;
 
@@ -49,10 +51,10 @@ public class SimpleLinkedList {
         System.out.print("{");
         Node cp = root;
         while(cp.ref != null){
-            System.out.print(cp.obj + ", ");
-            cp = cp.ref;
+            System.out.print(cp.getObj() + ", ");
+            cp = cp.getRef();
         }
-        System.out.print(cp.obj);
+        System.out.print(cp.getObj());
         System.out.println(" }");
     }
 
@@ -62,24 +64,24 @@ public class SimpleLinkedList {
         Node cp = root;
 
         do{
-            if (cp.obj == prev){
+            if (cp.getObj() == prev){
                 prevP = cp;
                 break;
             }
-            cp = cp.ref;
-        }while (cp != null && cp.ref != null );
+            cp = cp.getRef();
+        }while (cp != null && cp.getRef() != null );
 
         if (prevP == null){
             throw new IllegalStateException("List does not contain prev object.");
         }
 
         Node n = new Node();
-        n.obj = obj;
+        n.setObj(obj);
 
-        if (prevP.ref != null){
-            n.ref = prevP.ref;
+        if (prevP.getRef() != null){
+            n.setRef(prevP.getRef());
         }
-        prevP.ref = n;
+        prevP.setRef(n);
         size ++;
 
     }
@@ -93,6 +95,45 @@ public class SimpleLinkedList {
         private Object obj;
         private Node ref;
 
+        public Object getObj() {
+            return obj;
+        }
+
+        public void setObj(Object obj) {
+            this.obj = obj;
+        }
+
+        public Node getRef() {
+            return ref;
+        }
+
+        public void setRef(Node ref) {
+            this.ref = ref;
+        }
+    }
+
+    private class SLLIterator implements Iterable{
+
+        private Node node;
+
+        public SLLIterator() {
+        }
+
+        public boolean hasNext(){
+            return (node.getObj()!= null && node.getRef() != null);
+        }
+
+        public Node next(){
+
+            Node nextNode = null;
+
+            return nextNode;
+        }
+
+        @Override
+        public Iterator iterator() {
+            return null;
+        }
     }
 
 }
