@@ -47,8 +47,8 @@ public class Classroom {
 //        return result;
 //    }
 
-    public boolean isPresent(String name, String secondName){
-        return students.contains(name);
+    public boolean isPresent(Student s){
+        return students.contains(s);
     }
 
     public void printStudentInfo(){
