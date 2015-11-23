@@ -2,7 +2,7 @@ package node;
 
 import java.util.Iterator;
 
-public class SimpleLinkedList {
+public class SimpleLinkedList implements Iterable<Object>{
 
     private Node root;
     private int size;
@@ -90,6 +90,11 @@ public class SimpleLinkedList {
         return size;
     }
 
+    @Override
+    public Iterator<Object> iterator() {
+        return new SLLIterator();
+    }
+
     private class Node {
 
         private Object obj;
@@ -112,28 +117,33 @@ public class SimpleLinkedList {
         }
     }
 
-    private class SLLIterator implements Iterable{
+    private class SLLIterator implements Iterator<Object>{
 
         private Node node;
 
         public SLLIterator() {
         }
 
-        public boolean hasNext(){
-            return (node.getObj()!= null && node.getRef() != null);
-        }
-
-        public Node next(){
-
-            Node nextNode = null;
-
-            return nextNode;
+        @Override
+        public boolean hasNext() {
+            return (node == null && root != null) || (node != null && node.ref != null);
         }
 
         @Override
-        public Iterator iterator() {
-            return null;
+        public Object next() {
+            if (node == null && root != null){
+                node = root;
+                return node.getObj();
+            }
+
+            if (hasNext()){
+                node = node.ref;
+                return node.obj;
+            }
+            throw new IllegalStateException("List has no more elements.");
         }
+
+
     }
 
 }
