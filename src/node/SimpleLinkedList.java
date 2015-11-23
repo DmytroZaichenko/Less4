@@ -2,39 +2,39 @@ package node;
 
 public class SimpleLinkedList {
 
-    private  Node root;
-    private  int size;
+    private Node root;
+    private int size;
 
     public SimpleLinkedList() {
         size = 0;
     }
 
-    private void addFirst(Object obj){
+    private void addFirst(Object obj) {
 
     }
 
-    private void addLast(Object obj){
+    private void addLast(Object obj) {
 
     }
 
-    private void addAfter(Object obj, Object prev){
+    private void addAfter(Object obj, Object prev) {
 
     }
 
-    private int getSize(){
+    private int getSize() {
         return size;
     }
 
+    private class Node {
 
+        private Object obj;
+        private Node node;
 
-}
+        public Node() {
+        }
 
-class Node {
-
-    private Object o;
-    private Node node;
-
-    public Node() {
     }
 
 }
+
+
