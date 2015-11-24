@@ -2,16 +2,17 @@ package hashCode;
 
 public class Person {
 
-    public final int result = 25;
-
     private String name;
     private int age;
     private long salary;
+    private Address address;
 
     public Person(String name, int age) {
+
         this.name = name;
         this.age = age;
         salary = 1316;
+
     }
 
     @Override
@@ -19,7 +20,8 @@ public class Person {
         if (obj instanceof Person){
             Person p = (Person) obj;
             if (name != null && name.equals(p.name)
-                && p.age == age  && p.salary == salary){
+                && p.age == age  && p.salary == salary
+                && address != null && p.address.hashCode() == address.hashCode()   ){
                 return true;
             }
         }
@@ -28,10 +30,14 @@ public class Person {
 
     @Override
     public int hashCode() {
-        int result = 23;
+
+        int result = 25;
         result = 37 * result + name.hashCode();
         result = 37 * result + age;
         result = 37 * result + new Long(salary).hashCode();
+
         return result;
+
     }
+
 }
