@@ -2,13 +2,12 @@ package sortList;
 
 import java.util.*;
 
-class Comp implements  Comparator<Comp>, Comparable<Comp>{
+class Comp implements  Comparator<Comp>{
 
     private String alphabet = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
     private String name;
 
     public Comp(){
-
     }
 
     public Comp(String name) {
@@ -21,11 +20,6 @@ class Comp implements  Comparator<Comp>, Comparable<Comp>{
 
     public void setName(String name) {
         this.name = name;
-    }
-
-    @Override
-    public int compareTo(Comp o) {
-        return 0;
     }
 
     @Override
@@ -97,7 +91,20 @@ public class SortList {
         sl.add(new Comp("nine"));
         sl.add(new Comp("ten"));
 
-        Collections.sort(sl, new Comp());
+//        Collections.sort(sl, new Comp());
+        Collections.sort(sl, new Comparator<Comp>() {
+            @Override
+
+            public int compare(Comp c1, Comp c2) {
+                int result = c1.getName().compareToIgnoreCase(c2.getName());
+                if (result < 0){
+                    return 1;
+                }else if (result > 0){
+                    return -1;
+                }
+                return 0;
+            }
+        });
 
         for (Comp c: sl) {
             System.out.println(c.getName()+", ");
