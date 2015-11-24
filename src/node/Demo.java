@@ -62,7 +62,7 @@ public class Demo {
 //        System.out.print(sll.getSize() + " ");
 //        sll.printList();
 
-        System.out.println("test iterator");
+        System.err.println("test iterator");
         System.out.println();
 
         SimpleLinkedList sll = new SimpleLinkedList();
@@ -75,11 +75,11 @@ public class Demo {
 //            System.out.println(o);
 //        }
 
-        for (Iterator<Object> it = sll.iterator(); it.hasNext();){
-            it.next();
-            it.remove();
-            break;
-        }
+//        for (Iterator<Object> it = sll.iterator(); it.hasNext();){
+//            it.next();
+//            it.remove();
+//            break;
+//        }
 
         sll.printList();
 
