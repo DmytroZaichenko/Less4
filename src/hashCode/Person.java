@@ -35,7 +35,9 @@ public class Person {
         result = 37 * result + name.hashCode();
         result = 37 * result + age;
         result = 37 * result + new Long(salary).hashCode();
-
+        if (address != null){
+            result = 37 * result + address.hashCode();
+        }
         return result;
 
     }
