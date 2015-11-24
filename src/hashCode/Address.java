@@ -40,4 +40,19 @@ public class Address {
 
         return result;
     }
+
+    @Override
+    public boolean equals(Object obj) {
+        if (obj instanceof  Address){
+            Address address = (Address) obj;
+            if (
+                city != null && city.equals(address.getCity()) &&
+                street != null && street.equals(address.getStreet())&&
+                house != 0 && house == address.getHouse()
+               ){
+                return true;
+            }
+        }
+        return false;
+    }
 }
