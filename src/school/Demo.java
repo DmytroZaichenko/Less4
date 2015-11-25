@@ -6,6 +6,7 @@ public class Demo {
     public static void main(String[] args) {
 
         Classroom cr = new Classroom();
+        System.out.println(cr.isPresent(new Student("Dmytro","Tkachenko")));
         //System.out.println(cr.isPresent("Dmytro","Tkachenko"));
 //        cr.getStudentCount();
 //        cr.leave();
