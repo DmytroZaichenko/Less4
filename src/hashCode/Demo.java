@@ -20,27 +20,59 @@ public class Demo {
         person = new Person("Oleg",34);
         staff.put(person.hashCode(),person);
 
-        //key set
-        System.out.println(Arrays.toString(staff.keySet().toArray()));
-        Person person3 = new Person("Name",23);
+        Iterator<Integer> iKey = staff.keySet().iterator();
+        while (iKey.hasNext()){
+            System.out.println("Key: " + iKey.next());
+        }
 
-        System.out.println("Does hashMap contains Oleg as value: " + staff.containsValue(new Person("Oleg",34)));
-        System.out.println("Is hashMap is empty: " + staff.isEmpty());
+        Set<Map.Entry<Integer, Person>> entrySet = staff.entrySet();
+        for (Map.Entry entry : entrySet) {
+            System.out.println("+++++++++++++++++++++++++++++++++++");
+            System.out.println("looping HashMap in Java using EntrySet and java5 for loop");
+            System.out.println("key: " + entry.getKey() + "value: " + entry.getValue());
+        }
 
-        Integer key = new Person("Petro",35).hashCode();
-        Object value = staff.remove(key);
+        System.out.println();
 
-        System.out.println("Following value is removed from Map: " + value);
+        iKey = staff.keySet().iterator();
+        while (iKey.hasNext()){
+            Integer key = iKey.next();
+            System.out.println("key: " + key + "value: " + staff.get(key).toString());
+        }
 
-        System.out.println("Unsorted HashMap: " + staff);
+        Map<Integer, Person> rt = new TreeMap<>();
+        rt.values()
 
-        TreeMap sortedHashMap = new TreeMap(staff);
-        System.out.println("Sorted HashMap: " + sortedHashMap);
 
-        LinkedList<String> ll = new LinkedList<>();
-        ll.add(0,"123");
-        System.out.println(ll.get(0));
-        System.out.println(ll.hashCode());
+
+        //Map<Integer,Person> entSet = staff.entrySet();
+
+
+
+
+
+
+//        //key set
+//        System.out.println(Arrays.toString(staff.keySet().toArray()));
+//        Person person3 = new Person("Name",23);
+//
+//        System.out.println("Does hashMap contains Oleg as value: " + staff.containsValue(new Person("Oleg",34)));
+//        System.out.println("Is hashMap is empty: " + staff.isEmpty());
+//
+//        Integer key = new Person("Petro",35).hashCode();
+//        Object value = staff.remove(key);
+//
+//        System.out.println("Following value is removed from Map: " + value);
+//
+//        System.out.println("Unsorted HashMap: " + staff);
+//
+//        TreeMap sortedHashMap = new TreeMap(staff);
+//        System.out.println("Sorted HashMap: " + sortedHashMap);
+//
+//        LinkedList<String> ll = new LinkedList<>();
+//        ll.add(0,"123");
+//        System.out.println(ll.get(0));
+//        System.out.println(ll.hashCode());
 
 
 
