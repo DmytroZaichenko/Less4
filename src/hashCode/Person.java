@@ -45,7 +45,8 @@ public class Person {
             Person p = (Person) obj;
             if (name != null && name.equals(p.name)
                 && p.age == age  && p.salary == salary
-                && address != null && p.address.hashCode() == address.hashCode()   ){
+                || address != null && p.address.hashCode() == address.hashCode()
+                    ){
                 return true;
             }
         }
@@ -66,4 +67,12 @@ public class Person {
 
     }
 
+    @Override
+    public String toString() {
+        return "Person{" +
+                "name='" + name + '\'' +
+                ", age=" + age +
+                ", salary=" + salary +
+                '}';
+    }
 }
