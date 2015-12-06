@@ -7,7 +7,7 @@ public class Sub {
 
         //String str = "http://javarush.ru/alpha/index.html?lvl=15&view&name=Amigo";
         //String str = "http://javarush.ru/alpha/index.html?obj=3.14&name=Amigo";
-        String str = "http://javarush.ru/alpha/index.html?obj=3.14&name=Amigo&obj=Amigo";
+        String str = "http://javarush.ru/alpha/index.html?obj=3.14&&name=Amigo&obj=Amigo";
 
         int pos = str.indexOf("?");
         if (pos != 0){
