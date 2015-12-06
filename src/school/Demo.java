@@ -7,6 +7,11 @@ public class Demo {
 
         Classroom cr = new Classroom();
         System.out.println(cr.isPresent(new Student("Dmytro","Tkachenko")));
+
+        int i = 447;
+        int y = 64;
+        System.out.println(i/y);
+
         //System.out.println(cr.isPresent("Dmytro","Tkachenko"));
 //        cr.getStudentCount();
 //        cr.leave();
