@@ -5,9 +5,9 @@ public class Sub {
 
     public static void main(String[] args)  {
 
-        String str = "http://javarush.ru/alpha/index.html?lvl=15&view&name=Amigo";
+        //String str = "http://javarush.ru/alpha/index.html?lvl=15&view&name=Amigo";
         //String str = "http://javarush.ru/alpha/index.html?obj=3.14&name=Amigo";
-        //String str = "http://javarush.ru/alpha/index.html?obj=view1&name=Amigo";
+        String str = "http://javarush.ru/alpha/index.html?obj=3.14&name=Amigo&obj=Amigo";
 
         int pos = str.indexOf("?");
         if (pos != 0){
@@ -15,7 +15,7 @@ public class Sub {
             String newStr = str.substring(++pos);
             String param, value;
             String[] arrValue = new String[20];
-
+            int idxArrValue = 0;
             String[] arr = newStr.split("&");
 
             for (int i = 0; i < arr.length; i ++) {
@@ -29,9 +29,9 @@ public class Sub {
                     if (param.equals("obj")){
                         try {
                             Double d = new Double(value);
-                            arrValue[i] = alert(d);
+                            arrValue[idxArrValue ++] = alert(d);
                         }catch (NumberFormatException e){
-                            arrValue[i] = alert(value);
+                            arrValue[idxArrValue ++] = alert(value);
                         }
                     }
 
