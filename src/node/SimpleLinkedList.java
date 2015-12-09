@@ -58,7 +58,7 @@ public class SimpleLinkedList implements Iterable<Object>{
         System.out.println(" }");
     }
 
-    public void addAfter(Object obj, Object prev) {
+    public void addAfter(Object obj, Object prev ) {
 
         Node prevP = null;
         Node cp = root;

@@ -8,10 +8,19 @@ public class Demo {
 
     public static void main(String[] args){
 
-//        System.err.println("test all add methods");
-//        System.out.println();
-//
-//        SimpleLinkedList sll = new SimpleLinkedList();
+        SimpleLinkedList sll = new SimpleLinkedList();
+
+        sll.addFirst("a");
+        sll.addFirst("b");
+        sll.addFirst("c");
+        sll.addFirst("z");
+        sll.addAfter("1z","z");
+        sll.addAfter("z1","1z");
+
+        for (Object a:sll ) {
+            System.out.println(a);
+        }
+
 //        sll.addFirst("test 1");
 //        sll.addFirst("test 2");
 //        sll.addFirst("test 3");
@@ -27,14 +36,14 @@ public class Demo {
 //        sll.printList();
 //
 //        String middle = new String("middle");
-//        sll.addAfter(middle, mark);
+//        sll.addAfter(mark, middle );
 //        System.out.print(sll.getSize() + " ");
 //        sll.printList();
 //
 //        sll.addAfter("middle (-1)", mark);
 //        System.out.print(sll.getSize() + " ");
 //        sll.printList();
-//
+
 //        System.out.println();
 //        System.out.println("test addAfter, lost size == 1");
 //        System.out.println();
@@ -61,15 +70,11 @@ public class Demo {
 //        sll.addAfter("last", mark);
 //        System.out.print(sll.getSize() + " ");
 //        sll.printList();
-
-        System.err.println("test iterator");
-        System.out.println();
-
-        SimpleLinkedList sll = new SimpleLinkedList();
-        sll.addFirst("1. First");
-        sll.addFirst("2. Second");
-        sll.addFirst("3. the third");
-
+//
+//        System.err.println("test iterator");
+//        System.out.println();
+//
+//
 //        for (Iterator<Object> it = sll.iterator(); it.hasNext();){
 //            Object o = it.next();
 //            System.out.println(o);
@@ -80,8 +85,8 @@ public class Demo {
 //            it.remove();
 //            break;
 //        }
-
-        sll.printList();
+//
+//        sll.printList();
 
 
 
