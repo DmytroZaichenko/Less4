@@ -1,5 +1,7 @@
 package node;
 
+import java.util.Iterator;
+
 public class Demo {
 
     public static void main(String[] args){
@@ -9,16 +11,16 @@ public class Demo {
         sll.addFirst("2. Second");
         sll.addFirst("3. the third");
 
-//        for (Iterator<Object> it = sll.iterator(); it.hasNext();){
-//            Object o = it.next();
-//            System.out.println(o);
-//        }
+        for (Iterator<Object> it = sll.iterator(); it.hasNext();){
+            Object o = it.next();
+            System.out.println(o);
+        }
 
-//        for (Iterator<Object> it = sll.iterator(); it.hasNext();){
-//            it.next();
-//            it.remove();
-//            break;
-//        }
+        for (Iterator<Object> it = sll.iterator(); it.hasNext();){
+            it.next();
+            it.remove();
+            break;
+        }
 
         sll.printList();
 
