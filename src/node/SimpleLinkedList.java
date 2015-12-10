@@ -69,7 +69,7 @@ public class SimpleLinkedList implements Iterable<Object>{
                 break;
             }
             cp = cp.getRef();
-        }while (cp != null && cp.getRef() != null );
+        }while (cp != null );
 
         if (prevP == null){
             throw new IllegalStateException("List does not contain prev object.");
