@@ -3,14 +3,6 @@ package node;
 public class Demo {
 
     public static void main(String[] args){
-
-//        System.err.println("test all add methods");
-//        System.out.println();
-//
-//        SimpleLinkedList sll = new SimpleLinkedList();
-//        sll.addFirst("test 1");
-//        sll.addFirst("test 2");
-//        sll.addFirst("test 3");
 //
 //        System.out.print(sll.getSize()+" ");
 //        sll.printList();
