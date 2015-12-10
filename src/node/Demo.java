@@ -10,6 +10,8 @@ public class Demo {
         sll.addFirst("1. First");
         sll.addFirst("2. Second");
         sll.addFirst("3. the third");
+        sll.addLast("123");
+        sll.addAfter(5, "123");
 
         for (Iterator<Object> it = sll.iterator(); it.hasNext();){
             Object o = it.next();
