@@ -3,9 +3,8 @@ package node;
 public class Demo {
 
     public static void main(String[] args){
-//
-//        System.out.print(sll.getSize()+" ");
-//        sll.printList();
+
+        System.out.print(sll.getSize()+" ");
 //
 //        String mark = new String("mark");
 //
