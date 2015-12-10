@@ -25,9 +25,6 @@ public class Demo {
         }
 
         sll.printList();
-
-
-
     }
 
 }
