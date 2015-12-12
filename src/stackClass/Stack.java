@@ -1,66 +1,48 @@
 package stackClass;
 
-import java.util.Arrays;
-import java.util.LinkedList;
+import java.util.*;
 
 public class Stack {
 
-    private LinkedList<Object> linkedList;
-    private int size;
+    private List<Object> list;
 
     public Stack() {
-        linkedList = new LinkedList<Object>();
-        size = 0;
-    }
-
-    public int getSize() {
-        return size;
+        list = new ArrayList<>();
     }
 
     public void push(Object obj){
 
-        linkedList.addLast(obj);
-        if (linkedList.size() > 1){
-            linkedList.removeFirst();
-            size --;
+        if (list.size() == 0){
+            list.add(obj);
+        } else {
+            list.add(0,obj);
         }
 
     }
 
-    public void pop(int index){
+    public void pop(){
         try {
-            linkedList.remove(index);
-            size --;
+            list.remove(0);
         }catch (IndexOutOfBoundsException e){
-            System.out.println("Index " + index + " out of bounds");
+            System.out.println("List is empty");
         }
 
     }
 
-    public Object peek(int index){
+    public Object peek(){
 
         Object result = null;
         try {
-            result = linkedList.get(index);
+            result = list.get(0);
         }catch (IndexOutOfBoundsException e){
-            System.out.println("Index " + index + " out of bounds");
+            System.out.println("List is empty");
         }
 
         return result;
     }
 
-    public void add(Object obj){
-        linkedList.add(obj);
-        size ++;
-    }
-
-    public void add(int index, Object obj){
-        linkedList.add(index, obj);
-        size ++;
-    }
-
     @Override
     public String toString() {
-        return size == 0? "List is empty" : Arrays.toString(linkedList.toArray());
+        return list.size() == 0? "List is empty" : Arrays.toString(list.toArray());
     }
 }
