@@ -10,31 +10,31 @@ public class Stack {
         list = new ArrayList<>();
     }
 
-    public void push(Object obj){
+    public void push(Object obj) {
 
-        if (list.size() == 0){
+        if (list.size() == 0) {
             list.add(obj);
         } else {
-            list.add(0,obj);
+            list.add(0, obj);
         }
 
     }
 
-    public void pop(){
+    public void pop() {
         try {
             list.remove(0);
-        }catch (IndexOutOfBoundsException e){
+        } catch (IndexOutOfBoundsException e) {
             System.out.println("List is empty");
         }
 
     }
 
-    public Object peek(){
+    public Object peek() {
 
         Object result = null;
         try {
             result = list.get(0);
-        }catch (IndexOutOfBoundsException e){
+        } catch (IndexOutOfBoundsException e) {
             System.out.println("List is empty");
         }
 
@@ -43,6 +43,6 @@ public class Stack {
 
     @Override
     public String toString() {
-        return list.size() == 0? "List is empty" : Arrays.toString(list.toArray());
+        return list.size() == 0 ? "List is empty" : Arrays.toString(list.toArray());
     }
 }
