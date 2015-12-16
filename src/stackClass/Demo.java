@@ -7,16 +7,16 @@ public class Demo {
         Stack stack =  new Stack();
         System.out.println( stack.toString());
         for (int i = 0; i < 4; i++) {
-            stack.add(new Integer(i));
+            stack.push(new Integer(i));
         }
         System.out.println(stack.toString());
-        stack.peek(21);
-        stack.push(56);
+        stack.pop();
         System.out.println(stack.toString());
-        System.out.println("Value from index 3: "+stack.peek(3));
-        System.out.println("Remove value from index 3");
-        stack.pop(3);
+        stack.push(23);
         System.out.println(stack.toString());
+        stack.pop();
+        System.out.println(stack.toString());
+
 
     }
 }
